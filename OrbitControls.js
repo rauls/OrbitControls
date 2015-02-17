@@ -488,25 +488,29 @@ THREE.OrbitControls = function ( object, domElement ) {
 			case scope.keys.UP:
 				scope.pan( 0, scope.keyPanSpeed );
 				scope.update();
-				this.dispatchEvent( changeEvent );
+				scope.dispatchEvent( startEvent );
+				scope.dispatchEvent( endEvent );
 				break;
 
 			case scope.keys.BOTTOM:
 				scope.pan( 0, - scope.keyPanSpeed );
 				scope.update();
-				this.dispatchEvent( changeEvent );
+				scope.dispatchEvent( startEvent );
+				scope.dispatchEvent( endEvent );
 				break;
 
 			case scope.keys.LEFT:
 				scope.pan( scope.keyPanSpeed, 0 );
 				scope.update();
-				this.dispatchEvent( changeEvent );
+				scope.dispatchEvent( startEvent );
+				scope.dispatchEvent( endEvent );
 				break;
 
 			case scope.keys.RIGHT:
 				scope.pan( - scope.keyPanSpeed, 0 );
 				scope.update();
-				this.dispatchEvent( changeEvent );
+				scope.dispatchEvent( startEvent );
+				scope.dispatchEvent( endEvent );
 				break;
 
 		}
